@@ -20,13 +20,11 @@ A [Terraform module][module] to manage a collection of Floating IPs in [Hetzner 
 ## ✨ TL;DR
 
 ```hcl
-module "ips" {
+module "floating_ips" {
   source = "terraform-hetzner-modules/floating-ip/hetzner"
 
-  labels = { managed_by = "terraform" }
   ips = {
-    public_v4 = { type = "ipv4", home_location = "fsn1" }
-    public_v6 = { type = "ipv6", home_location = "fsn1", name = "web-v6" }
+    web = { type = "ipv4", home_location = "fsn1" }
   }
 }
 ```
